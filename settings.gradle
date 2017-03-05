@@ -1,0 +1,4 @@
+rootProject.name = 'fractal-swing'
+
+rootProject.buildFileName = "${rootProject.name}.gradle"
+
