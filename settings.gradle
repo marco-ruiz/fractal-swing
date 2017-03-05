@@ -1,4 +1,17 @@
+include ':fractal-framework'
+
 rootProject.name = 'fractal-swing'
 
 rootProject.buildFileName = "${rootProject.name}.gradle"
 
+rootProject.children.each { project ->
+    project.buildFileName = "${project.name}.gradle"
+    println project.buildFileName
+}
+
+/*
+rootProject.children.each { project ->
+    String fileBaseName = project.name.replaceAll("\p{Upper}") { "-${it.toLowerCase()}" }
+    project.buildFileName = "${fileBaseName}.gradle"
+}
+*/
