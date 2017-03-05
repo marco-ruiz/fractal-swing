@@ -1,17 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'eclipse'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-	compile project(':fractal-framework')
-    testCompile 'junit:junit:4.12'
-}
 
 allprojects {
 	apply plugin: 'eclipse'
@@ -29,4 +16,25 @@ allprojects {
 subprojects {
 	eclipse.project.name = "${rootProject.name}.${project.name}".replaceAll(':', '-')
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile project(':fractal-framework')
+    testCompile 'junit:junit:4.12'
+}
+
+task runApp(dependsOn: 'classes', type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+	main = 'org.bop.fractals.line.swing.FractalApp'
+}
+
+defaultTasks 'runApp'
+
+
 

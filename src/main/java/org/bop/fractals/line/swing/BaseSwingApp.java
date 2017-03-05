@@ -43,7 +43,7 @@ public class BaseSwingApp extends JPanel {
 
         appFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         appFrame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) { System.exit(1); }
+            public void windowClosing(WindowEvent e) { System.exit(0); }
         });
     }
 
