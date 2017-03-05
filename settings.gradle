@@ -9,9 +9,3 @@ rootProject.children.each { project ->
     println project.buildFileName
 }
 
-/*
-rootProject.children.each { project ->
-    String fileBaseName = project.name.replaceAll("\p{Upper}") { "-${it.toLowerCase()}" }
-    project.buildFileName = "${fileBaseName}.gradle"
-}
-*/
