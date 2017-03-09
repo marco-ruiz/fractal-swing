@@ -30,11 +30,11 @@ dependencies {
 }
 
 task runApp(dependsOn: 'classes', type: JavaExec) {
+	group = 'Execution'
+	description = 'Launches the default application associated with this project'
     classpath = sourceSets.main.runtimeClasspath
-	main = 'org.bop.fractals.line.swing.FractalApp'
 }
 
-defaultTasks 'runApp'
-
+runApp.main = 'org.bop.fractals.line.swing.FractalApp'
 
 
